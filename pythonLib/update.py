@@ -1,0 +1,2 @@
+print("lol")
+a = input()
