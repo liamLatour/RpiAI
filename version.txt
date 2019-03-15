@@ -1,3 +1,2 @@
-0.1
-25
-8
+CurrentVersion=0.1
+NextVersion=0.1.1
