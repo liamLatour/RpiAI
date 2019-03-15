@@ -17,8 +17,8 @@ driver = webdriver.Chrome(options=chrome_options)
 driver.get(url)
 
 
-driver.find_element_by_id("input_1").send_keys("liam.latour")
-driver.find_element_by_id ("input_2").send_keys("pikmine##2")
+driver.find_element_by_id("input_1").send_keys("////")
+driver.find_element_by_id ("input_2").send_keys("////")
 driver.find_element_by_id("SubmitCreds").click()
 
 driver.get(urlPronote)
