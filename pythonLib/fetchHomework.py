@@ -54,5 +54,5 @@ for elem in html:
 
 print(json.dumps(jsonObj))
 sys.stdout.flush()
-quit(0)
+exit()
 driver.close()

@@ -32,6 +32,7 @@ if currentVersion != -1:
         for ver in f.read().splitlines():
             if "CurrentVersion" in ver:
                 myVersion = ver.split("=")[1]
+        f.close()
     except:
         pass
 
@@ -39,6 +40,7 @@ if currentVersion != -1:
         print("Updating to version: " + currentVersion)
         copy("update.py", "..//..//")
         os.system("python ..//..//update.py")
+        exit()
     else:
         print("Up to date")
 else:
