@@ -1,6 +1,17 @@
 var fs = require('fs');
 const {PythonShell} = require('python-shell');
 
+// AutoUpdate
+function autoUpdate(){
+    const myPythonScriptPath = './pythonLib/autoUpdate.py';
+    const pyshell = new PythonShell(myPythonScriptPath);
+    pyshell.on('message', function (message) {
+        console.log(message);
+    });
+}
+autoUpdate();
+window.setInterval(autoUpdate, 3600000);
+
 function saveFile(content, path) {
     fs.writeFile(path, content, (err) => {
         if (err) {

@@ -6,6 +6,11 @@ import json
 import sys
 import os
 
+def findDir(dirr):
+    while not os.path.isdir(dirr):
+        os.chdir("..//")
+
+
 print("Starting to look for current version")
 sys.stdout.flush()
 
@@ -28,19 +33,27 @@ for ver in text.splitlines():
 if currentVersion != -1:
     myVersion = -1
     try:
-        f = open("..//version", "r")
+        findDir('.//RpiAI')
+        f = open(".//RpiAI//version", "r")
         for ver in f.read().splitlines():
             if "CurrentVersion" in ver:
                 myVersion = ver.split("=")[1]
         f.close()
-    except:
-        pass
+    except Exception as e:
+        print(e)
 
     if myVersion == -1 or myVersion != currentVersion:
         print("Updating to version: " + currentVersion)
-        copy("update.py", "..//..//")
-        os.system("python ..//..//update.py")
-        exit()
+        sys.stdout.flush()
+
+        try:
+            findDir('.//RpiAI')
+            copy(".//RpiAI//pythonLib//update.py", ".//")
+            os.system("python update.py")
+        except Exception as e:
+            print(e)
+            print(os.getcwd())
+            sys.stdout.flush()
     else:
         print("Up to date")
 else:
