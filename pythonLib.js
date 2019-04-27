@@ -9,8 +9,8 @@ function autoUpdate(){
         console.log(message);
     });
 }
-autoUpdate();
-window.setInterval(autoUpdate, 3600000);
+//autoUpdate();
+//window.setInterval(autoUpdate, 3600000);
 
 function saveFile(content, path) {
     fs.writeFile(path, content, (err) => {
@@ -98,4 +98,4 @@ function isEquivalent(a, b) {
     return true;
 }
 
-getMarks();
+//getMarks();

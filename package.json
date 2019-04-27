@@ -14,6 +14,7 @@
     "electron": "^4.0.8"
   },
   "dependencies": {
-    "python-shell": "^1.0.7"
+    "python-shell": "^1.0.7",
+    "simplex-noise": "^2.4.0"
   }
 }
